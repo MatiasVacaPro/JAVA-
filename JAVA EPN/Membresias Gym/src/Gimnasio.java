@@ -1,3 +1,4 @@
+package mini_banco;
 //Este es el Gimnasio
 
 public class Gimnasio {

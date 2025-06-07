@@ -3,9 +3,28 @@ package mini_banco;
 
 public class CuentaCorriente extends Cuenta {
     private static final double LIMITE_SOBREGIRO = -500.0;
+    private MembresiaPremium membresiaPremium;
 
     public CuentaCorriente(String numeroCuenta, double saldoInicial) {
         super(numeroCuenta, saldoInicial);
+    }
+
+    public CuentaCorriente(String numeroCuenta, double saldoInicial, MembresiaPremium membresiaPremium) {
+        this(numeroCuenta, saldoInicial);
+        this.membresiaPremium = membresiaPremium;
+    }
+
+    public MembresiaPremium getMembresiaPremium() {
+        return membresiaPremium;
+    }
+
+    public void mostrarBeneficiosGimnasio() {
+        if (membresiaPremium != null) {
+            membresiaPremium.mostrarInformacion();
+            membresiaPremium.mostrarOfertasEspeciales();
+        } else {
+            System.out.println("La cuenta no tiene membresía de gimnasio.");
+        }
     }
 
     @Override
@@ -24,6 +43,7 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public String toString() {
-        return String.format("Cuenta Corriente Nro: %s, Saldo: $%.2f", numeroCuenta, saldo);
+        String beneficio = (membresiaPremium != null) ? ", Gimnasio Premium" : "";
+        return String.format("Cuenta Corriente Nro: %s, Saldo: $%.2f%s", numeroCuenta, saldo, beneficio);
     }
 }

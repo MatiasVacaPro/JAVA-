@@ -1,3 +1,4 @@
+package mini_banco;
 // Membresia Normal
 public class MembresiaNormal extends Membresia {
 
