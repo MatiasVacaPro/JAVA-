@@ -1,3 +1,4 @@
+package mini_banco;
 //Membresia
 
 public abstract class Membresia {

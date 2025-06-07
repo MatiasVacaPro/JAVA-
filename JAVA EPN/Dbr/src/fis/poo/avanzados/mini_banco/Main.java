@@ -42,8 +42,11 @@ public class Main {
         System.out.println("\n\n--- Creando y operando Cuenta Corriente ---");
         CuentaCorriente cc1 = null;
         try {
-            cc1 = new CuentaCorriente("CC-001", 300.00);
+            MembresiaPremium membresia = new MembresiaPremium("Juan Pérez", "mensual", 12, true, true);
+            cc1 = new CuentaCorriente("CC-001", 300.00, membresia);
             System.out.println("Cuenta Corriente creada: " + cc1);
+            System.out.println("Beneficios de Gimnasio para la cuenta:");
+            cc1.mostrarBeneficiosGimnasio();
 
             cc1.depositar(100.00);
             System.out.println("Tras depósito de $100.00: " + cc1); // Saldo: 400.00

@@ -1,3 +1,4 @@
+package mini_banco;
 // Membresia Premiun
 
 public class MembresiaPremium extends Membresia {
